@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
       alignItems: "center",
     },
     text: {
-      fontSize: 40,
+        fontFamily: "AmaticBold",
+     
+      fontSize: 70,
       color: "#4b3832",
     },
   });
