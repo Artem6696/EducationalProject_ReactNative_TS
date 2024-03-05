@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, StyleSheet, View } from "react-native";
 
-import PartListItem from "../components/core/PartListItem";
+import PartListItem from "@components/core/PartListItem";
 
 
 const data = [...Array(20)].map((value, ind) => ind + 1);
