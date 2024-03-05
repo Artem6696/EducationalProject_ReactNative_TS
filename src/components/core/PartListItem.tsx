@@ -6,7 +6,7 @@ type PartListItem = {
 };
 export default function DayListItem({ part }: PartListItem) {
   return (
-    <Link href={'/platform/application' + part} asChild>
+    <Link href={`/part${part}`} asChild>
       <Pressable style={styles.box} >
         <Text style={styles.text}>{part}</Text>
       </Pressable>
