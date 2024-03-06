@@ -1,3 +1,4 @@
+import onBoarding from "@/app/(platform)/part2/onboarding";
 import { Link } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
@@ -7,7 +8,7 @@ type PartListItem = {
 export default function DayListItem({ part }: PartListItem) {
   return (
     <Link href={`/part${part}`} asChild>
-      <Pressable style={styles.box} >
+      <Pressable style={styles.box}>
         <Text style={styles.text}>{part}</Text>
       </Pressable>
     </Link>
