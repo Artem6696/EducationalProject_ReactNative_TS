@@ -6,7 +6,7 @@ export default function Application1DetailsScreen() {
   return (
     <View>
       <Stack.Screen options={{ title: "part 2" }} />
-      <Text style={{ fontFamily: "AmaticBold", fontSize: 50 }}>
+      <Text style={{ }}>
         Application_1DetailsScreen
       </Text>
       <Link href="part2/onboarding" asChild>

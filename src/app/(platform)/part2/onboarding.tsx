@@ -7,6 +7,18 @@ import {
   Gesture,
   Directions,
 } from "react-native-gesture-handler";
+import Animated, {
+  BounceIn,
+  BounceInLeft,
+  BounceInRight,
+  BounceOut,
+  SlideInLeft,
+  SlideInRight,
+  SlideOutLeft,
+  ZoomIn,
+  ZoomOut,
+} from "react-native-reanimated";
+
 const onBoardingStepsData = [
   {
     icon: "people-arrows",
@@ -35,7 +47,8 @@ const onBoarding = () => {
 
   const onContinue = () => {
     const isLastScreen = screenIndex == onBoardingStepsData.length - 1; //сравнение без приведения типов текущего индекса экрана и длины массива,
-    if (isLastScreen) {                                                 //как только индекс будет равен длине массива вернет true
+    if (isLastScreen) {
+      //как только индекс будет равен длине массива вернет true
       endOnBoarding();
     } else {
       setScreenIndex(screenIndex + 1);
@@ -53,7 +66,7 @@ const onBoarding = () => {
 
   const endOnBoarding = () => {
     setScreenIndex(0);
-    router.back()
+    router.back();
   };
 
   // const swipeBack = Gesture.Fling()
@@ -76,7 +89,7 @@ const onBoarding = () => {
   const swipe = Gesture.Simultaneous(
     Gesture.Fling().runOnJS(true).direction(Directions.RIGHT).onStart(onBack),
     Gesture.Fling().runOnJS(true).direction(Directions.LEFT).onStart(onContinue)
-  )
+  );
   return (
     <SafeAreaView style={styles.page}>
       <Stack.Screen options={{ headerShown: false }} />
@@ -92,18 +105,33 @@ const onBoarding = () => {
         ))}
       </View>
       <GestureDetector gesture={swipe}>
-        <View style={styles.pageContent}>
-          <FontAwesome6
-            name={data.icon}
-            size={100}
-            color="#FFDA11"
-            style={styles.image}
-          />
+        <View key={screenIndex} style={styles.pageContent}>
+          <Animated.View entering={ZoomIn} exiting={ZoomOut.duration(100)}>
+            <FontAwesome6
+              name={data.icon}
+              size={150}
+              color="#FFDA11"
+              style={styles.image}
+            />
+          </Animated.View>
           <View style={styles.footer}>
-            <Text style={styles.title}>{data.title}</Text>
-            <Text style={styles.description}>{data.description}</Text>
+            <Animated.Text
+              entering={SlideInLeft.delay(120)}
+              style={styles.title}
+            >
+              {data.title}
+            </Animated.Text>
+            <Animated.Text
+              entering={SlideInRight.delay(300)}
+              style={styles.description}
+            >
+              {data.description}
+            </Animated.Text>
             <View style={styles.buttonsRow}>
-              <Text style={styles.buttonText}>Skip</Text>
+              <Pressable onPress={() => endOnBoarding()}>
+                <Text style={styles.buttonText}>Skip</Text>
+              </Pressable>
+
               <Pressable onPress={() => onContinue()} style={styles.button}>
                 <Text style={styles.buttonText}>Continue</Text>
               </Pressable>
@@ -130,7 +158,7 @@ const styles = StyleSheet.create({
   image: {
     alignSelf: "center",
     margin: 20,
-    marginTop: 30,
+    marginTop: 100,
   },
 
   title: {
