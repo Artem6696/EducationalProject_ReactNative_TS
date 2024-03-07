@@ -10,14 +10,14 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
-      {/* <FlatList
+      <FlatList
         contentContainerStyle={styles.content}
         data={data}
         numColumns={2}
         columnWrapperStyle={styles.column}
         renderItem={({ item }) => <PartListItem part={item} />}
-      /> */}
-      <OnBoarding />
+      />
+      {/* <OnBoarding /> */}
     </View>
   );
 }

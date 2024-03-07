@@ -35,42 +35,48 @@ const onBoarding = () => {
 
   const onContinue = () => {
     const isLastScreen = screenIndex == onBoardingStepsData.length - 1; //сравнение без приведения типов текущего индекса экрана и длины массива,
-    if (isLastScreen) {
-      //как только индекс будет равен длине массива вернет true
+    if (isLastScreen) {                                                 //как только индекс будет равен длине массива вернет true
       endOnBoarding();
     } else {
       setScreenIndex(screenIndex + 1);
     }
   };
+
   const onBack = () => {
     const isFirstScreen = screenIndex == 0;
     if (isFirstScreen) {
-      endOnBoarding()
+      endOnBoarding();
     } else {
-      setScreenIndex( screenIndex - 1)
+      setScreenIndex(screenIndex - 1);
     }
   };
 
   const endOnBoarding = () => {
     setScreenIndex(0);
-    // router.back()
+    router.back()
   };
 
-  const swipeBack = Gesture.Fling()
-    .direction(Directions.LEFT)
-    .onEnd((e) => {
-      console.log("Swipe back");
-      onContinue();
-    });
+  // const swipeBack = Gesture.Fling()
+  //   .runOnJS(true) // this helped me
+  //   .direction(Directions.LEFT)
+  //   .onEnd((e) => {
+  //     console.log("Swipe to left");
+  //     onContinue();
+  //   });
 
-  const swipeForward = Gesture.Fling()
-    .direction(Directions.RIGHT)
-    .onEnd((e) => {
-      console.log("Swipe forward ");
-      onBack();
-    });
+  // const swipeForward = Gesture.Fling()
+  //   // .runOnJS(true)
+  //   .direction(Directions.RIGHT)
+  //   .onEnd((e: any) => {
+  //     console.log("Swipe to right ");
+  //     onBack();
+  //   });
 
-  const composed = Gesture.Simultaneous(swipeBack, swipeForward);
+  // const composed = Gesture.Simultaneous(swipeBack, swipeForward);
+  const swipe = Gesture.Simultaneous(
+    Gesture.Fling().runOnJS(true).direction(Directions.RIGHT).onStart(onBack),
+    Gesture.Fling().runOnJS(true).direction(Directions.LEFT).onStart(onContinue)
+  )
   return (
     <SafeAreaView style={styles.page}>
       <Stack.Screen options={{ headerShown: false }} />
@@ -85,7 +91,7 @@ const onBoarding = () => {
           />
         ))}
       </View>
-      <GestureDetector gesture={composed}>
+      <GestureDetector gesture={swipe}>
         <View style={styles.pageContent}>
           <FontAwesome6
             name={data.icon}
