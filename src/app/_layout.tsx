@@ -18,6 +18,8 @@ import Splash from "./(platform)/part4/splash";
 
 // SplashScreen.preventAutoHideAsync();
 
+
+
 export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
   const [splashAnimatedFinished, setSplashAnimatedFinished] = useState(false);
@@ -36,16 +38,17 @@ export default function RootLayout() {
       setAppReady(true);
     }
   }, [fontsError, fonstLoaded]);
-  
-          //пока не загружены шрифты и не закончилась анимация     
-  const showAnimatedSplash = !appReady || !splashAnimatedFinished;
 
+
+
+  //пока не загружены шрифты и не закончилась анимация
+  const showAnimatedSplash = !appReady || !splashAnimatedFinished;
 
   if (showAnimatedSplash) {
     return (
       <Splash
-        onAnimationFinish={(isCancelled: boolean) => {
-          if (!isCancelled) { // если анимация не была прервана
+        onAnimationFinish={(Cancelled: boolean) => {
+          if (!Cancelled) { // если анимация не была прервана
             setSplashAnimatedFinished(true); //Анимация завершена
           }
         }}

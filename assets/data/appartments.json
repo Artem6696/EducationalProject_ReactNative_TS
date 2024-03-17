@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "latitude": 43.676700,
+        "longitude": 51.165021,        
+        "price": 80,
+        "title": "Cozy Apartment in Aktau",
+        "description": "This cozy apartment in Aktau offers a comfortable stay with modern amenities.",
+        "numberOfStars": 5,
+        "rating": 4.7,
+        "image": "https://example.com/image1.jpg",
+        "city": "Aktau"
+    },
+    {
+        "id": 2,
+        "latitude": 43.638636,
+        "longitude": 51.154950,
+        "price": 120,
+        "title": "Aston",
+        "description": "Aston hotel offers a luxurious experience with stunning views of the city.",
+        "numberOfStars": 5,
+        "rating": 4.9,
+        "image": "https://lh5.googleusercontent.com/p/AF1QipPHiCVcKII6IcBfxUz3hTmCiC42jDf34DxQQzMN=w408-h306-k-no",
+        "city": "Aktau"
+    },
+    {
+        "id": 3,
+        "latitude": 43.6465,
+        "longitude": 51.164827,
+        "price": 150,
+        "title": "Holiday Inn Aktau, an IHG Hotel",
+        "description": "Holiday Inn Aktau offers a comfortable and convenient stay for business and leisure travelers.",
+        "numberOfStars": 5,
+        "rating": 4.5,
+        "image": "https://lh5.googleusercontent.com/p/AF1QipPJ_MxYeL7M0p8k1_7u0Pu1a6TUp9E92ki0WYet=w426-h240-k-no",
+        "city": "Aktau"
+    },
+    {
+        "id": 4,
+        "latitude": 43.65572299816489,
+        "longitude":  51.13851093939441,
+        "price": 90,
+        "title": "Victory",
+        "description": "Victory hotel offers a comfortable and affordable stay in Aktau.",
+        "numberOfStars": 5,
+        "rating": 4.2,
+        "image": "https://lh3.googleusercontent.com/gps-proxy/ALd4DhG2M7wl3KwTBlTv1LcitdYNjwBKvC73oPWmHq13yxZXhK4sPYDFJZjsLhlCpgf5ukuxBe_BFoV5tKJg_NFfrAFRXJ9jFdSGpFpVgirwVmXd1kQdf-Kum2UKe8rHaPaW-uX0mJNx5IuVNCmRIzTywx86OEzy-VgF30QOysadJplLP5s1M-TmQQJC=w437-h240-k-no",
+        "city": "Aktau"
+    },
+    {
+        "id": 5,
+        "latitude": 43.64535937256944, 
+        "longitude": 51.15139242392069,
+        "price": 110,
+        "title": "Renaissance Hotel Aktau",
+        "description": "Renaissance Hotel Aktau offers a luxurious stay with stunning views of the Caspian Sea.",
+        "numberOfStars": 5,
+        "rating": 4.6,
+        "image": "https://lh5.googleusercontent.com/p/AF1QipNtha0g0gYKhaTg1ZEbdNOJVam2K63g9HavAJrv=w408-h272-k-no",
+        "city": "Aktau"
+    },
+    {
+        "id": 6,
+        "latitude": 43.632892252092766, 
+        "longitude":  51.158987293216086,
+        "price": 100,
+        "title": "Caspian Riviera Grand Palace Hotel",
+        "description": "Caspian Riviera Grand Palace Hotel offers a luxurious experience with panoramic views of the Caspian Sea.",
+        "numberOfStars": 5,
+        "rating": 4.8,
+        "image": "https://lh5.googleusercontent.com/p/AF1QipMOEw6xGX1nZ-6Px0gO0jf8Oftg4dmhgTMmVRe3=w408-h272-k-no",
+        "city": "Aktau"
+    },
+    {
+        "id": 7,
+        "latitude": 43.6477,
+        "longitude": 51.1798,
+        "price": 130,
+        "title": "Spacious Apartment with Sea View Terrace",
+        "description": "This spacious apartment in Aktau offers a relaxing stay with stunning sea views.",
+        "numberOfStars": 5,
+        "rating": 4.3,
+        "image": "https://example.com/image7.jpg",
+        "city": "Aktau"
+    },
+    {
+        "id": 8,
+        "latitude": 43.6496,
+        "longitude": 51.1742,
+        "price": 95,
+        "title": "Coastal Cabin for a Relaxing Getaway",
+        "description": "Coastal Cabin offers a peaceful retreat near the beach in Aktau.",
+        "numberOfStars": 5,
+        "rating": 4.9,
+        "image": "https://example.com/image8.jpg",
+        "city": "Aktau"
+    },
+    {
+        "id": 9,
+        "latitude": 43.6469,
+        "longitude": 51.1761,
+        "price": 140,
+        "title": "Elegant Loft with City Views",
+        "description": "This elegant loft in Aktau offers stunning city views and a luxurious stay.",
+        "numberOfStars": 5,
+        "rating": 4.7,
+        "image": "https://example.com/image9.jpg",
+        "city": "Aktau"
+    },
+    {
+        "id": 10,
+        "latitude": 43.6498,
+        "longitude": 51.1759,
+        "price": 120,
+        "title": "Modern Apartment near Aktau Beach",
+        "description": "Modern Apartment offers a comfortable stay near the beautiful beaches of Aktau.",
+        "numberOfStars": 5,
+        "rating": 4.4,
+        "image": "https://example.com/image10.jpg",
+        "city": "Aktau"
+    }
+]
