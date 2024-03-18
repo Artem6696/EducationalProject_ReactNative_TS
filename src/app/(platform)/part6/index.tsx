@@ -6,15 +6,15 @@ import {Link, Stack} from "expo-router";
 const index = () => {
     return (
         <SafeAreaView edges={["bottom"]} style={{flex: 1}}>
-            <Stack.Screen options={{title: "part 5: Maps"}}/>
+            <Stack.Screen options={{title: "part 6: Tinder"}}/>
             <View style={styles.page}>
                 <View style={styles.description}>
-                    <Text style={styles.text}>AirBNB</Text>
+                    <Text style={styles.text}>Tinder app</Text>
                 </View>
             </View>
 
             <Link href={"/part6/tinder"} asChild>
-                <Button title="go to AirBNB Map"/>
+                <Button title="go to TINDER "/>
             </Link>
         </SafeAreaView>
     );
