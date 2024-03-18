@@ -2,7 +2,8 @@ import React from 'react';
 import {StyleSheet, View} from "react-native";
 import TinderCard from "@components/part6/TinderCard";
 import {Stack} from "expo-router";
-import {useSharedValue} from "react-native-reanimated";
+import {useSharedValue, withSpring} from "react-native-reanimated";
+import {Gesture, GestureDetector} from "react-native-gesture-handler";
 
 const users = [
     {
@@ -38,22 +39,39 @@ const users = [
 ]
 
 const Tinder = () => {
-    const activeIndex = useSharedValue(0)
+    const activeIndex = useSharedValue(0);
+    const translationX = useSharedValue(0)
+
+    const gesture = Gesture.Pan()
+        .onBegin((event) => console.log('onBegin: ', event))
+
+        .onChange((event) => {
+            translationX.value = event.translationX
+        })
+       
+        .onEnd(() => {
+            translationX.value = withSpring(0)
+        });
+
     return (
-        <View style={styles.page}>
-            <Stack.Screen options={{headerShown: false}}/>
+        <GestureDetector gesture={gesture}>
+            <View style={styles.page}>
+                <Stack.Screen options={{headerShown: false}}/>
 
-            {users.map((user, index) => (
-                <TinderCard
-                    user={user}
-                    key={user.id}
-                    numOfCards={users.length}
-                    index={index}
-                    activeIndex={activeIndex}
-                />
-            ))}
+                {users.map((user, index) => (
+                    <TinderCard
+                        user={user}
+                        key={user.id}
+                        numOfCards={users.length}
+                        index={index}
+                        activeIndex={activeIndex}
+                        translationX={translationX}
+                    />
+                ))}
 
-        </View>
+            </View>
+        </GestureDetector>
+
     );
 };
 const styles = StyleSheet.create({
